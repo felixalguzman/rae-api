@@ -1,0 +1,44 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.felixalguzman'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+    google()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'com.android.support:support-annotations:27.1.1'
+
+    implementation 'com.github.GrenderG:uDRAE-sdk:1.0.4'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation('com.squareup.retrofit2:converter-gson:2.9.0')
+    implementation("com.squareup.okhttp3:logging-interceptor")
+    implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
+
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
